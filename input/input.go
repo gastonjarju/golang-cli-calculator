@@ -8,10 +8,7 @@ type CalculationInput struct {
 	Num2 float64
 }
 
-// TODO: Add checks for non-numerics catch
-// TODO: Add checks for non operation checks
-
-func UserInputs() CalculationInput {
+func UserInputs() CalculationInput  {
 
 	var userOperations string 
 	var firstNum, secondNum float64
@@ -19,6 +16,8 @@ func UserInputs() CalculationInput {
 	
 	fmt.Println("Enter operator: +, -, /, *:")
 	fmt.Scan(&userOperations)
+
+
 	
 	fmt.Println("Enter first number:")
 	fmt.Scan(&firstNum)
@@ -32,4 +31,13 @@ func UserInputs() CalculationInput {
 		Num1: firstNum,
 		Num2: secondNum,
 	}
+}
+
+func InputValidityCheck (inputCheck string) bool {
+	if(inputCheck != "+" && inputCheck !="-" && inputCheck !="*" && inputCheck !="/") {
+		fmt.Println("Invalid Operator.Try again")
+		return false
+	}
+
+	return true
 }
