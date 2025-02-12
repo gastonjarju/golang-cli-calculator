@@ -1,6 +1,9 @@
 package input
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 type CalculationInput struct {
 	Operation string
@@ -14,16 +17,44 @@ func UserInputs() CalculationInput  {
 	var firstNum, secondNum float64
 
 	
-	fmt.Println("Enter operator: +, -, /, *:")
-	fmt.Scan(&userOperations)
+	for {
+			fmt.Println("Enter operator: +, -, /, *:")
+			fmt.Scan(&userOperations)
+		
+			_, err := OperationsValidityCheck(userOperations)
 
+			if(err !=nil){
+				fmt.Println("Error:", err)
+			continue
 
-	
-	fmt.Println("Enter first number:")
-	fmt.Scan(&firstNum)
-	
-	fmt.Println("Enter second number:")
-	fmt.Scan(&secondNum)
+		}
+		break
+	} 
+
+	for {
+		fmt.Println("Enter first number:")
+		fmt.Scan(&firstNum)
+
+		_, err := NumberValidityCheck(int(firstNum))
+			if(err != nil) {
+				fmt.Println("Error:", err)
+				continue
+			}
+			break
+		}
+		
+		
+		for {
+			fmt.Println("Enter second number:")
+			fmt.Scan(&secondNum)
+			_, err := NumberValidityCheck(int(secondNum))
+				if(err != nil) {
+					fmt.Println("Error:", err)
+					continue
+				}
+				break
+
+		}
 
 
 	return CalculationInput{
@@ -33,11 +64,18 @@ func UserInputs() CalculationInput  {
 	}
 }
 
-func InputValidityCheck (inputCheck string) bool {
+func OperationsValidityCheck (inputCheck string) (bool, error) {
 	if(inputCheck != "+" && inputCheck !="-" && inputCheck !="*" && inputCheck !="/") {
-		fmt.Println("Invalid Operator.Try again")
-		return false
+		return false, errors.New("invalid Operator.Try again")
 	}
 
-	return true
+	return true, nil
+}
+
+func NumberValidityCheck (inputNum int) (bool, error) {
+	if(inputNum != 2){
+		return false, errors.New("invalid number inserted. Try again")
+	}
+
+	return true, nil
 }
