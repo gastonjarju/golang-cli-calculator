@@ -19,7 +19,7 @@ func UserInputs() CalculationInput  {
 	
 	for {
 			fmt.Println("Enter operator: +, -, /, *:")
-			fmt.Scan(&userOperations)
+			fmt.Scanln(&userOperations)
 		
 			_, err := OperationsValidityCheck(userOperations)
 
@@ -33,21 +33,34 @@ func UserInputs() CalculationInput  {
 
 	for {
 		fmt.Println("Enter first number:")
-		fmt.Scan(&firstNum)
-
-		_, err := NumberValidityCheck(int(firstNum))
-			if(err != nil) {
-				fmt.Println("Error:", err)
-				continue
-			}
-			break
+		_, err := fmt.Scanln(&firstNum) 
+		if(err != nil) {
+			fmt.Println("Invalid input. Please enter a valid number")
+			fmt.Scanln()
+			continue
 		}
 		
+		_, err = NumberValidityCheck(firstNum)
 		
-		for {
-			fmt.Println("Enter second number:")
-			fmt.Scan(&secondNum)
-			_, err := NumberValidityCheck(int(secondNum))
+		if(err != nil) {
+			fmt.Println("Error:", err)
+			continue
+		}
+		break
+	}
+	
+	
+	for {
+		fmt.Println("Enter second number:")
+		_, err := fmt.Scanln(&secondNum)
+		if(err != nil) {
+				fmt.Println("Invalid input. Please enter a valid number")
+				fmt.Scanln()
+				continue
+
+			}
+
+			_, err = NumberValidityCheck(secondNum)
 				if(err != nil) {
 					fmt.Println("Error:", err)
 					continue
@@ -55,7 +68,6 @@ func UserInputs() CalculationInput  {
 				break
 
 		}
-
 
 	return CalculationInput{
 		Operation: userOperations,
@@ -72,8 +84,8 @@ func OperationsValidityCheck (inputCheck string) (bool, error) {
 	return true, nil
 }
 
-func NumberValidityCheck (inputNum int) (bool, error) {
-	if(inputNum != 2){
+func NumberValidityCheck (inputNum float64) (bool, error) {
+	if(inputNum < 0 || inputNum > 1e9){
 		return false, errors.New("invalid number inserted. Try again")
 	}
 
