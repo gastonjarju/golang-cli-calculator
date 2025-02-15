@@ -10,25 +10,25 @@ Here’s a roadmap for your Go CLI Calculator project, with a focus on enhancing
 
 #### **Day 1-2: Improve Code Structure and Error Handling**
 - **Concepts Covered**: Structs, functions, error handling.
-  - Add **error handling** for invalid inputs (e.g., non-numeric values for numbers, invalid operations).
-  - Use **functions** for checking the validity of user inputs (e.g., check if the operator is valid).
-  - Review and refactor the `PerformCalculation` function to handle division by zero and other edge cases.
+  - [x] Add **error handling** for invalid inputs (e.g., non-numeric values for numbers, invalid operations).
+  - [x] Use **functions** for checking the validity of user inputs (e.g., check if the operator is valid).
+  - [x] Review and refactor the `PerformCalculation` function to handle division by zero and other edge cases.
 
 #### **Day 3-4: Structs and Validation**
 - **Concepts Covered**: Structs, methods, validation.
-  - Create methods for validating the `CalculationInput` struct. (Future)
-  - Refactor input handling: implement separate functions for validating numbers and operators.
-  - Make use of Go's **error handling** pattern by returning errors when invalid input is detected.
+  - [] Create methods for validating the `CalculationInput` struct. (Future)
+  - [x] Refactor input handling: implement separate functions for validating numbers and operators.
+  - [x] Make use of Go's **error handling** pattern by returning errors when invalid input is detected.
 
 #### **Day 5-6: Implementing Logging and More Robust Errors**
 - **Concepts Covered**: Logging, error handling, file operations.
-  - Implement **logging** of the calculation results to a log file (`logs.txt`), and include error messages if something goes wrong.
-  - Expand on error handling by wrapping errors with additional context using `fmt.Errorf()`.
+  - [x] Implement **logging** of the calculation results to a log file (`logs.txt`), and include error messages if something goes wrong.
+  - [] Expand on error handling by wrapping errors with additional context using `fmt.Errorf()`.
 
 #### **Day 7: Testing**
 - **Concepts Covered**: Unit testing, Go testing framework.
-  - Write basic **unit tests** for the `PerformCalculation` function, testing for valid and invalid operations.
-  - Use Go’s built-in testing framework to write simple test cases that check for edge cases like dividing by zero or invalid operations.
+  - [] Write basic **unit tests** for the `PerformCalculation` function, testing for valid and invalid operations.
+  - [] Use Go’s built-in testing framework to write simple test cases that check for edge cases like dividing by zero or invalid operations.
 
 ---
 
