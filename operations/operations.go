@@ -9,6 +9,7 @@ import (
 
 func PerformCalculation (input input.CalculationInput) (float64, error) {
 		var result float64
+		
 		switch input.Operation {
 		case "+":
 			result = input.Num1 + input.Num2

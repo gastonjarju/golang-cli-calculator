@@ -10,6 +10,7 @@ import (
 
 func main () {
 	fmt.Printf("Welcome to the Go CLI Calculator!\n")
+	
 	userInput := input.UserInputs()
 		
 	result, err := operations.PerformCalculation(userInput)
