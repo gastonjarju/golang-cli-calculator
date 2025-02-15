@@ -5,6 +5,7 @@ import (
 
 	"github.com/gastonjarju/cli-calculator/input"
 	"github.com/gastonjarju/cli-calculator/operations"
+	"github.com/gastonjarju/cli-calculator/output"
 )
 
 func main () {
@@ -17,6 +18,10 @@ func main () {
 	} else {
 		fmt.Println("The result is:",result)
 	}
+
+	result = output.LogResult(result)
+
+
 
 	
 }

@@ -16,7 +16,7 @@ Here’s a roadmap for your Go CLI Calculator project, with a focus on enhancing
 
 #### **Day 3-4: Structs and Validation**
 - **Concepts Covered**: Structs, methods, validation.
-  - Create methods for validating the `CalculationInput` struct.
+  - Create methods for validating the `CalculationInput` struct. (Future)
   - Refactor input handling: implement separate functions for validating numbers and operators.
   - Make use of Go's **error handling** pattern by returning errors when invalid input is detected.
 

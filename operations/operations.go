@@ -26,5 +26,7 @@ func PerformCalculation (input input.CalculationInput) (float64, error) {
 			fmt.Println("Invalid operation")
 	
 		}
+
+	
 	return result, nil
 }
