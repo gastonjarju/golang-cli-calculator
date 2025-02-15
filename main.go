@@ -11,8 +11,12 @@ func main () {
 	fmt.Printf("Welcome to the Go CLI Calculator!\n")
 	userInput := input.UserInputs()
 		
-	result := operations.PerformCalculation(userInput)
-	fmt.Println("The result is:",result)
+	result, err := operations.PerformCalculation(userInput)
+	if(err !=nil){
+		fmt.Println("Error", err)
+	} else {
+		fmt.Println("The result is:",result)
+	}
 
 	
 }
