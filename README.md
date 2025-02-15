@@ -6,13 +6,27 @@ A simple Go-based CLI calculator.
 
 Clone the repository and install dependencies:
 
+### Option 1:
+
 ```sh
 git clone https://github.com/gastonjarju/golang-cli-calculator.git
 
+```
+
+```sh
 cd cli-calculator
+```
+
+```sh
 go mod tidy
 
 ```
+
+### Option 2:
+
+````sh
+source setup.sh
+``
 
 ## Usage
 
@@ -21,7 +35,7 @@ Run the program:
 ```sh
 go run main.go
 
-```
+````
 
 ## Features
 
