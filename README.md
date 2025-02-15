@@ -15,6 +15,7 @@ git clone https://github.com/gastonjarju/golang-cli-calculator.git
 
 ```sh
 cd cli-calculator
+
 ```
 
 ```sh
@@ -24,9 +25,10 @@ go mod tidy
 
 ### Option 2:
 
-````sh
+```sh
 source setup.sh
-``
+
+```
 
 ## Usage
 
